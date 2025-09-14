@@ -14,10 +14,18 @@
 };
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {
+        def_layer {
             display-name = "Base";
             bindings = <
 &kp EQUAL &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
@@ -33,11 +41,11 @@
         fn1_layer {
             display-name = "Fn1";
             bindings = <
-&kp GRAVE  &kp F1      &kp F2        &kp F3        &kp F4      &kp F5                        &kp F6    &kp F7    &kp F8      &kp F9         &kp F10      &kp CAPS
-&trans     &trans      &trans        &trans        &trans      &trans                        &kp HOME  &kp INS   &kp UP      &kp LS(INS)    &kp PG_UP    &trans
-&trans     &trans      &trans        &trans        &trans      &trans                        &kp END   &kp LEFT  &kp DOWN    &kp RIGHT      &kp PG_DN    &trans
-&trans     &trans      &trans        &trans        &trans      &trans    &kp F11   &kp F12   &trans    &trans    &trans      &trans         &trans       &trans
-                                     &trans        &kp PSCRN   &trans    &trans    &trans    &trans    &kp DEL   &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5                    &kp F6    &kp F7    &kp F8    &kp F9       &kp F10    &kp CAPS
+&trans     &trans  &trans  &trans  &trans     &trans                    &kp HOME  &kp INS   &kp UP    &kp LS(INS)  &kp PG_UP  &trans
+&trans     &trans  &trans  &trans  &trans     &trans                    &kp END   &kp LEFT  &kp DOWN  &kp RIGHT    &kp PG_DN  &trans
+&trans     &trans  &trans  &trans  &trans     &trans  &kp F11  &kp F12  &trans    &trans    &trans    &trans       &trans     &trans
+                           &trans  &kp PSCRN  &trans  &trans   &trans   &trans    &kp DEL   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -46,25 +54,30 @@
         fn2_layer {
             display-name = "Fn2";
             bindings = <
-&kp GRAVE  &kp F1      &kp F2        &kp F3        &kp F4        &kp F5                        &kp F6    &kp F7    &kp F8      &kp F9         &kp F10      &kp CAPS
-&trans     &trans      &trans        &trans        &trans        &trans                        &kp HOME  &kp INS   &kp UP      &kp LS(INS)    &kp PG_UP    &trans
-&trans     &trans      &trans        &trans        &trans        &trans                        &kp END   &kp LEFT  &kp DOWN    &kp RIGHT      &kp PG_DN    &trans
-&trans     &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans    &kp F11   &kp F12   &trans    &trans    &trans      &trans         &trans       &trans
-                                     &trans        &kp PSCRN     &trans    &trans    &trans    &trans    &kp DEL   &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5                    &kp F6    &kp F7    &kp F8    &kp F9       &kp F10    &kp CAPS
+&trans     &trans  &trans  &trans  &trans     &trans                    &kp HOME  &kp INS   &kp UP    &kp LS(INS)  &kp PG_UP  &trans
+&trans     &trans  &trans  &trans  &trans     &trans                    &kp END   &kp LEFT  &kp DOWN  &kp RIGHT    &kp PG_DN  &trans
+&trans     &trans  &trans  &trans  &trans     &trans  &kp F11  &kp F12  &trans    &trans    &trans    &trans       &trans     &trans
+                           &trans  &kp PSCRN  &trans  &trans   &trans   &trans    &kp DEL   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        extra_1 {
-            status = "reserved";
+        fn3_layer {
+            display-name = "Fn3";
+            bindings = <
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4              &kp F6    &kp F7    &kp F8    &kp F9      &kp F10    &kp CAPS
+&trans     &trans       &trans       &trans       &trans       &trans                    &kp HOME  &kp INS   &kp UP    &kp LS(INS) &kp PG_UP  &trans
+&trans     &trans       &trans       &trans       &trans       &trans                    &kp END   &kp LEFT  &kp DOWN  &kp RIGHT   &kp PG_DN  &trans
+&trans     &trans       &trans       &trans       &trans       &trans  &kp F11  &kp F12  &trans    &trans    &trans    &trans      &trans     &trans
+                                     &trans       &kp PSCRN    &trans  &trans   &trans   &trans    &kp DEL   &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        extra_2 {
-            status = "reserved";
-        };
-
-        extra_3 {
+        fn4_layer {
             status = "reserved";
         };
     };
