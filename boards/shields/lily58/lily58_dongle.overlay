@@ -1,6 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include "lily58.dtsi"
+#include <layouts/kata0510/lily58.dtsi>
 
 / {
     chosen {
