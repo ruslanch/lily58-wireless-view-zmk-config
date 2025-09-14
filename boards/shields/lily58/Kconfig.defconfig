@@ -2,7 +2,7 @@ if SHIELD_LILY58_DONGLE
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
-    default "Lily58"
+    default "Lily58D"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -17,10 +17,10 @@ config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
 
 # Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
 config BT_MAX_CONN
-    default 7
+    default 5
 
 # Set this to the same number as BT_MAX_CONN
 config BT_MAX_PAIRED
-    default 7
+    default 5
 
 endif

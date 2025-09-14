@@ -1,9 +1,11 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
+#include "lily58.dtsi"
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &physical_layout0;
+        zmk,physical-layout = &kata0510_lily58_layout;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -30,10 +32,8 @@
                                     RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,7) RC(4,8) RC(4,9) RC(4,10)
         >;
     };
+};
 
-    physical_layout0: physical_layout_0 {
-        compatible = "zmk,physical-layout";
-        display-name = "Lily58 Layout";
-        transform = <&default_transform>;
-    };
+&kata0510_lily58_layout {
+    transform = <&default_transform>;
 };
