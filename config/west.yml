@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: rk2kk
+      url-base: https://github.com/rk2kk
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-component-raytac-dongle
+      remote: rk2kk
+      revision: main
   self:
     path: config
