@@ -1,14 +1,11 @@
 manifest:
   remotes:
-    - name: ruslanch
-      url-base: https://github.com/ruslanch
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
   projects:
     - name: zmk
-      remote: ruslanch
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-component-raytac-dongle
-      remote: ruslanch
-      revision: main
   self:
     path: config
